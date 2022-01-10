@@ -89,7 +89,7 @@
         <TextView
             android:id="@+id/tvSeparator"
             style="@style/TextSFProBold18"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/yellow_star"
             android:textStyle="italic"

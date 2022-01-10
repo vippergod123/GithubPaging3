@@ -105,8 +105,7 @@ class PageKeyedRemoteMediator(
     ): Any {
         return when (loadType) {
             LoadType.REFRESH -> {
-                val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
-                remoteKeys?.nextKey?.minus(1) ?: DEFAULT_PAGE_INDEX
+                DEFAULT_PAGE_INDEX
             }
             LoadType.APPEND -> {
                 val remoteKeys = getLastRemoteKey(state)
@@ -119,14 +118,6 @@ class PageKeyedRemoteMediator(
                     endOfPaginationReached = false
                 )
                 prevKey
-            }
-        }
-    }
-
-    private suspend fun getRemoteKeyClosestToCurrentPosition(state: PagingState<Int, GithubRepo>): RemoteKeys? {
-        return state.anchorPosition?.let { position ->
-            state.closestItemToPosition(position)?.id?.let { repoId ->
-                remoteKeyDao.remoteKeysRepoID(repoId)
             }
         }
     }

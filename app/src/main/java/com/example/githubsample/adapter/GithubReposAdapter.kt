@@ -56,19 +56,12 @@ class GithubReposAdapter(
 
                         ivtWatchers.ivIcon.setImageResource(R.drawable.ic_eye)
                         ivtWatchers.tvText.text = repo.watchersCount?.toString()
-
-//                        repo.owner?.let { owner ->
-//                            glide.load(owner.avatarUrl)
-//                                .placeholder(R.drawable.img_repo_placeholder).into(ivAvatar)
-//                        } ?: glide.clear(ivAvatar)
-
                     }
                 }
             }
 
         }
     }
-
 
     companion object {
         val REPO_COMP = object : DiffUtil.ItemCallback<GithubRepoListItem>() {
