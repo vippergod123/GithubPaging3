@@ -29,4 +29,5 @@ interface GithubRepoDao {
 
     @Query("SELECT COUNT(*) FROM repos")
     suspend fun getRepoSize(): Int
+
 }

@@ -21,9 +21,14 @@ import kotlinx.coroutines.withContext
 class GithubRepositoryImpl(private val githubRepoDatabase: GithubRepoDatabase) : GithubRepository {
     private fun getGithubRepoApi() = ApiManager.getGithubRepoApi()
     private fun getGithubRepoDao() = githubRepoDatabase.getGithubRepoDao()
+    private fun getRemoteKeysDao() = githubRepoDatabase.getRemoteKeysDao()
 
     override fun getProfile(): LiveData<GithubProfile?> = getGithubRepoDao().getProfiles().map {
         it.firstOrNull()
+    }
+
+    override fun getTotalPage(): LiveData<Int?> = getRemoteKeysDao().getLastNextKey().map {
+        it.firstOrNull()?.minus(1)
     }
 
     @OptIn(ExperimentalPagingApi::class)

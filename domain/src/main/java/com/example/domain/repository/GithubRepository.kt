@@ -15,4 +15,6 @@ interface GithubRepository {
     suspend fun fetchProfile(param: FetchGithubProfileParam): ResponseHandler<GithubProfile>
 
     fun getProfile(): LiveData<GithubProfile?>
+
+    fun getTotalPage(): LiveData<Int?>
 }

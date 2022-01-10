@@ -11,9 +11,11 @@ import com.example.githubsample.model.GithubRepoListItem
 import com.example.githubsample.model.UpdateProfile
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import kotlin.math.max
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(
@@ -21,6 +23,7 @@ class HomeViewModel(
     private val savedStateHandle: SavedStateHandle,
     private val getProfile: GetGithubProfile,
     private val fetchProfile: FetchGithubProfile,
+    private val getTotalGithubRepoPages: GetTotalGithubRepoPages,
 ) : BaseViewModel() {
 
     companion object {
@@ -45,6 +48,7 @@ class HomeViewModel(
         getProfile.invoke()
     }
 
+    val totalPage = getTotalGithubRepoPages.invoke()
 
     val repos = savedStateHandle.getLiveData<String>(KEY_REPO)
         .asFlow()
@@ -67,6 +71,7 @@ class HomeViewModel(
                         null
                     }
                 }
+//                .insertHeaderItem(TerminalSeparatorType.SOURCE_COMPLETE,GithubRepoListItem.Header(100,100))
         }
         .cachedIn(viewModelScope)
 

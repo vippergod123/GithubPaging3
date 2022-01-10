@@ -88,9 +88,11 @@
 
         <TextView
             android:id="@+id/tvSeparator"
-            style="@style/TextSFProDisplayRegular14"
+            style="@style/TextSFProBold18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/yellow_star"
+            android:textStyle="italic"
             android:text="This is separator" />
     </LinearLayout>
 

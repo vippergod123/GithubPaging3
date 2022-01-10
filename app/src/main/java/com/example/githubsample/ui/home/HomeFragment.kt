@@ -94,6 +94,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::clas
                         }
                     }
                 }
+
+                viewModel.totalPage.observe(viewLifecycleOwner) {
+                    adapter.setTotalPage(it)
+                }
             }
         }
     }

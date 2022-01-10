@@ -63,6 +63,7 @@ class PageKeyedRemoteMediator(
             when (response) {
                 is ResponseHandler.Success -> {
                     val items: MutableList<GithubRepo> = response.data.toMutableList()
+
                     val isEndOfList = items.isEmpty()
                     items.map { it.atPage = page }
                     val prevKey = if (page == DEFAULT_PAGE_INDEX) null else page - 1

@@ -1,5 +1,6 @@
 package com.example.githubsample.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -17,12 +18,15 @@ class GithubReposAdapter(
     private val onItemClick: ((repo: GithubRepo) -> Unit)? = null
 ) :
     PagingDataAdapter<GithubRepoListItem, GithubReposAdapter.GithubRepoViewHolder>(REPO_COMP) {
+    private var totalPage: Int? = null
+
     inner class GithubRepoViewHolder(
         private val binding: ItemRepoBinding,
         private val glide: GlideRequests,
         private val onItemClick: ((repo: GithubRepo) -> Unit)? = null
     ) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(item: GithubRepoListItem?) {
             binding.apply {
                 containerRepo.isVisible = false
@@ -34,7 +38,7 @@ class GithubReposAdapter(
                     }
                     is GithubRepoListItem.Separator -> {
                         containerSeparator.isVisible = true
-                        tvSeparator.text = item.atPage.toString()
+                        tvSeparator.text = "Page ${item.atPage} of $totalPage"
                     }
                     is GithubRepoListItem.Item -> {
                         val repo = item.repo
@@ -42,7 +46,7 @@ class GithubReposAdapter(
                         binding.root.setOnClickListener {
                             onItemClick?.invoke(repo)
                         }
-                        tvName.text = "${repo.name}"
+                        tvName.text = "${repo.name} - ${repo.id}"
                         tvDescription.text = repo.description
                         ivtFolk.ivIcon.setImageResource(R.drawable.ic_fork)
                         ivtFolk.tvText.text = repo.forksCount?.toString()
@@ -65,6 +69,7 @@ class GithubReposAdapter(
         }
     }
 
+
     companion object {
         val REPO_COMP = object : DiffUtil.ItemCallback<GithubRepoListItem>() {
             override fun areContentsTheSame(
@@ -85,6 +90,7 @@ class GithubReposAdapter(
         holder.bind(getItem(position))
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubRepoViewHolder {
         return GithubRepoViewHolder(
             ItemRepoBinding.inflate(
@@ -95,5 +101,9 @@ class GithubReposAdapter(
             glide,
             onItemClick
         )
+    }
+
+    fun setTotalPage(page: Int?) {
+        totalPage = page
     }
 }
