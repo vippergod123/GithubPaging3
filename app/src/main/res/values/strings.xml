@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GithubSample</string>
+    <string name="retry">Retry</string>
+    <string name="no_descriptions">No descriptions</string>
+</resources>

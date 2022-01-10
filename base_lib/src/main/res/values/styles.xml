@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextSFProSemiBold15">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular16">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular17">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular18">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular14">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular12">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular20">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular28">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular22">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular15">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular13">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextSFProBold12">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextSFProBold11">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextSFProBold18">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextSFProBold20">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextSFProBold22">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextSFProBold24">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextSFProDisplayRegular24">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextSFProBold30">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextSFProBold42">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">42sp</item>
+    </style>
+
+    <style name="TextSFProBold28">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextSFProRegular14">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sfprodisplay_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextSFProBold14">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextSFProBold26">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="TextSFProBold9">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+
+    <style name="TextSFProBold16">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextSFProBold13">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextSFProBold15">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:fontFamily">@font/sf_pro_bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_margin">16dp</dimen>
+    <dimen name="common_margin_divided">8dp</dimen>
+    <dimen name="common_margin_small">4dp</dimen>
+    <dimen name="common_margin_doubled">32dp</dimen>
+    <dimen name="vertical_content_margin_doubled">48dp</dimen>
+    <dimen name="margin_ds">50dp</dimen>
+
+    <dimen name="ic_size">30dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="double_padding">18dp</dimen>
+    <dimen name="trible_padding">20dp</dimen>
+    <dimen name="input_height">45dp</dimen>
+    <dimen name="default_text_size">14sp</dimen>
+    <dimen name="text_view_size_1">@dimen/default_text_size</dimen>
+    <dimen name="small_padding">5dp</dimen>
+    <integer name="ripple_duration">150</integer>
+    <dimen name="item_ds2_padding">23dp</dimen>
+
+</resources>
