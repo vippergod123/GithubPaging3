@@ -1,5 +1,6 @@
 package com.example.data
 
+import com.example.domain.entity.GithubProfile
 import com.example.domain.entity.GithubRepo
 import com.example.domain.entity.Owner
 import java.util.concurrent.atomic.AtomicInteger
@@ -24,10 +25,18 @@ class GithubRepoFactory {
         )
     }
 
-    fun listOfFakeRepos() = listOf(
-        createGithubRepo(),
-        createGithubRepo(),
-        createGithubRepo(),
-        createGithubRepo(),
-    )
+    fun createProfile(): GithubProfile {
+        val id = counter.incrementAndGet()
+        val randomInt = Random.nextInt(100)
+        return GithubProfile(
+            id = id,
+            bio = "bio",
+            blog = "",
+            publicRepos = 10,
+            email = "",
+            avatarUrl = "",
+            name = "",
+        )
+    }
+
 }

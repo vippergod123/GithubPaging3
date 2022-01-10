@@ -78,5 +78,8 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$androidXTestVersion"
     androidTestImplementation "androidx.test:rules:$androidXTestVersion"
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutinesVersion}"
+
+    androidTestImplementation "io.mockk:mockk-android:1.10.0"
+    androidTestImplementation "io.mockk:mockk-agent-jvm:1.10.0"
     // Optional -- Mockito framework
 }
