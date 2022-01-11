@@ -30,11 +30,6 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
         unitTests.returnDefaultValues = true
-//        unitTests.all {
-//            jacoco {
-//                includeNoLocationClasses = true
-//            }
-//        }
     }
 
     kotlinOptions {
@@ -79,7 +74,4 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$androidXTestVersion"
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutinesVersion}"
 
-//    androidTestImplementation "io.mockk:mockk-android:1.10.0"
-//    androidTestImplementation "io.mockk:mockk-agent-jvm:1.10.0"
-    // Optional -- Mockito framework
 }

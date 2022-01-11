@@ -83,7 +83,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::clas
             lifecycleScope.launchWhenCreated {
                 viewModel.profile.observe(viewLifecycleOwner) {
                     it?.let { profile ->
-                        //avatar, name, blog, email, number of public repositories
                         viewBinding.apply {
                             tvName.text = profile.name
                             tvBlog.text = profile.blog

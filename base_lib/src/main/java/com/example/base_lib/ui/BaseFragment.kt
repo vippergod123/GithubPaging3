@@ -10,27 +10,12 @@ import com.example.base_lib.ext.getViewBinding
 
 
 interface BaseFragmentInterface {
-    /**
-     * Init UI
-     * Đặt hàm này trong [Fragment.onViewCreated]
-     */
     fun initView()
 
-    /**
-     * Init những gì liên quan tới UI
-     *
-     * Đặt hàm này trong [Fragment.onViewCreated], nằm dưới [initView]
-     */
     fun setupFirst()
 
-    /**
-     * Đặt hàm này trong [Fragment.onResume]
-     */
     fun setupLogic()
 
-    /**
-     * Đặt hàm này trong [Fragment.onStop]
-     */
     fun cleanUp()
 }
 

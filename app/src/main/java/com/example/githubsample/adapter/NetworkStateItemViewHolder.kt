@@ -10,10 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.githubsample.R
 import com.example.githubsample.databinding.NetworkStateItemBinding
 
-/**
- * A View Holder that can display a loading or have click action.
- * It is used to show the network state of paging.
- */
 class NetworkStateItemViewHolder(
     parent: ViewGroup,
     private val retryCallback: () -> Unit
