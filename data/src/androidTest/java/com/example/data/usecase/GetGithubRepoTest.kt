@@ -1,9 +1,7 @@
 package com.example.data.usecase
 
-import androidx.paging.ExperimentalPagingApi
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
+import android.util.Log
+import androidx.paging.*
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.data.FakeGithubRepoEndpoint
@@ -12,6 +10,7 @@ import com.example.data.repository.pagingsource.PageKeyedRemoteMediator
 import com.example.data.source.GithubRepoEndpoint
 import com.example.data.source.local.GithubRepoDatabase
 import com.example.domain.entity.GithubRepo
+import com.example.domain.exception.AppException
 import com.example.domain.repository.GithubRepository
 import com.example.domain.usecase.GetGithubRepos
 import com.example.domain.usecase.GetGithubReposParam
@@ -46,6 +45,32 @@ class GetGithubRepoTest {
         getGithubRepos = GetGithubRepos(repository)
     }
 
+    @OptIn(ExperimentalPagingApi::class)
+    @Test
+    fun getGitHubReposWhenResponseError(): Unit = runBlocking {
+        val api = FakeGithubRepoEndpoint(errorResponse = true)
+        whenever(repository.getRepos(param)).thenReturn(mockPager(api))
+        val result: Flow<PagingData<GithubRepo>> = getGithubRepos(param)
+        verify(repository, times(1)).getRepos(param)
+        verifyNoMoreInteractions(repository)
+        try {
+            result.collect {
+                it.collectDataForTest { loadState ->
+                    val refreshState = loadState.mediator?.refresh
+                    val appendState = loadState.mediator?.append
+                    Log.d("DUYTS","$loadState")
+                    if (appendState is LoadState.Error) {
+                        throw (appendState.error)
+                    } else if (refreshState is LoadState.Error) {
+                        throw (refreshState.error)
+                    }
+                }
+            }
+        } catch (ex: Exception) {
+            Assert.assertEquals(ex, AppException.Failed)
+        }
+    }
+
     @Test
     fun getGitHubReposWhenResponseSuccess(): Unit = runBlocking {
         val api = FakeGithubRepoEndpoint(errorResponse = false)
@@ -57,19 +82,6 @@ class GetGithubRepoTest {
         result.take(1).collect {
             it.collectDataForTest()
             Assert.assertEquals(mockDb.getGithubRepoDao().getRepoSize(), api.getFakeRepos().size)
-        }
-    }
-
-    @Test
-    fun getGitHubReposWhenResponseError(): Unit = runBlocking {
-        val api = FakeGithubRepoEndpoint(errorResponse = true)
-        whenever(repository.getRepos(param)).thenReturn(mockPager(api))
-        val result: Flow<PagingData<GithubRepo>> = getGithubRepos(param)
-        verify(repository, times(1)).getRepos(param)
-        verifyNoMoreInteractions(repository)
-        result.take(1).collect {
-            it.collectDataForTest()
-            Assert.assertEquals(mockDb.getGithubRepoDao().getRepoSize(),0)
         }
     }
 
